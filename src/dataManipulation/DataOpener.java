@@ -32,7 +32,10 @@ public class DataOpener {
 					
 					//System.out.println("whole line: " + line + " matcher: \n" + 
 					//matcher.group() + " at start: " +matcher.start() + " and end: " + matcher.end());
+					if(matcher.group(2) != null)
 					System.out.println(matcher.group(2));
+					if(matcher.group(4) != null)
+					System.out.println(matcher.group(4));
 				}
 			}
 		} catch (IOException e) {
@@ -42,7 +45,7 @@ public class DataOpener {
 	
 	public String normalizePattern(String searched)
 	{
-		searched = searched+".*";
+		searched = searched+".*(";
 		int count = 0;
 		
 		searched = normalizeText(searched);
@@ -50,9 +53,9 @@ public class DataOpener {
 		{
 			count++;
 			if(count < suppLang.length)
-			searched = searched+"((http://"+lang+".*resource/(.*)>) (<http://.*wiki.*>))|Industrial_action.*(";
+			searched = searched+"http://"+lang+".*resource/(.*)> (<http://.*wiki.*>)|";
 			else
-			searched = searched+"(http://"+lang+".*resource/(.*)>) (<http://.*wiki.*>))";
+			searched = searched+"http://"+lang+".*resource/(.*)> (<http://.*wiki.*>))";
 		}
 		
 		System.out.println("pattern: " + searched);
