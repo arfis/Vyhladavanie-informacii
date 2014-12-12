@@ -1,0 +1,9 @@
+
+Nemeckych slov je: 1344673
+Francuzskych slov je: 1391963
+
+Nemecke ktore ukazuju na francuzske: 525854
+Francuzske ktore ukazuju na nemecke: 563314
+Obojsmerne: 522780
+Iba nemecke na anglicke a reverz: 316653
+Iba francuzske na anglicke a reverz512208
